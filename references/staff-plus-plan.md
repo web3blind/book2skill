@@ -12,7 +12,7 @@ Produce this plan when any of these are true:
 - the skill will live in a Git repo;
 - the skill is for authors, a client, a team, or future reuse;
 - source permission, privacy, or provenance matters;
-- the user mentions `create-skill`, `shaw`, GitHub, PR, upstream, private repo, release, evals, or tests;
+- the user mentions skill creation, implementation handoff, GitHub, PR, upstream, private repo, release, evals, or tests;
 - the source is a whole book, course, methodology, or expert system rather than a small note;
 - the skill may become a template for future book-to-skill work.
 
@@ -353,9 +353,9 @@ Each eval case should include:
 - must_not_include;
 - failure signs.
 
-### 14. Book2Skill -> create-skill handoff
+### 14. Book2Skill -> skill-creation handoff
 
-Include a ready-to-paste handoff for `/create-skill extract`.
+Include a ready-to-paste handoff for the locally configured skill-creation workflow.
 
 It must state:
 
@@ -371,15 +371,15 @@ It must state:
 
 ### 15. Implementation route
 
-For OpenClaw skill creation, route through the skill creator flow:
+For OpenClaw skill creation, route through the local skill creator flow and the user's selected development/implementation skill:
 
 ```text
 /book2skill finalize <skill-name> from extracted source with <permission policy>
-/create-skill extract <handoff>
-/shaw implement <skill-name> private/public skill repo from create-skill output contract
+<skill-creator-command> <handoff>
+<development-skill-command> implement <skill-name> private/public skill repo from skill-creator output contract
 ```
 
-If the local environment has a different skill creator name, adapt the wording, but preserve the stage gates: Book2Skill spec -> create-skill packaging -> implementation -> verification.
+Do not hardcode a specific development command. Use the environment's selected development skill (for example `/coding`, `/sho`, or another local command) and preserve the stage gates: Book2Skill spec -> skill packaging -> implementation -> verification.
 
 ### 16. Git workflow
 
@@ -435,8 +435,8 @@ List upstream and downstream skills/tools.
 Example:
 
 - `book2skill`: source extraction and practical spec;
-- `create-skill`: production packaging;
-- `shaw`: implementation;
+- local skill-creation workflow: production packaging;
+- selected development/implementation skill: implementation;
 - domain-specific downstream skills: publishing, research, design, analytics.
 
 Also state boundaries: what this skill owns and does not own.

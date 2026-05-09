@@ -1,6 +1,6 @@
 ---
 name: book2skill
-description: Use when the user invokes /book2skill or asks to turn a book, PDF, EPUB, long article, course, notes, or author methodology into a practical OpenClaw skill. Produces a task-oriented skill spec or Staff+ delivery plan, avoids mere summaries, and hands final implementation to create-skill/skill creator after human review.
+description: Use when the user invokes /book2skill or asks to turn a book, PDF, EPUB, long article, course, notes, or author methodology into a practical OpenClaw skill. Produces a task-oriented skill spec or Staff+ delivery plan, avoids mere summaries, and hands final implementation to the locally configured skill-creation/development workflow after human review.
 ---
 
 # book2skill
@@ -92,11 +92,11 @@ Create a **Practical Skill Spec** before writing files. It must include:
 
 Use `references/output-templates.md`.
 
-If the user asks for a production-grade plan, private/public GitHub repo plan, author-approved methodology skill, implementation plan, or anything that should be handed to `create-skill`/`shaw`, also produce a **Staff+ Skill Delivery Plan** using `references/staff-plus-plan.md`.
+If the user asks for a production-grade plan, private/public GitHub repo plan, author-approved methodology skill, implementation plan, or anything that should be handed to a skill-creation or development workflow, also produce a **Staff+ Skill Delivery Plan** using `references/staff-plus-plan.md`.
 
 ### 5. Staff+ delivery plan gate
 
-When the user wants to make a real skill from the source, especially with a repo, team/client/authors, private source, release, evals, or create-skill handoff, produce a Staff+ plan before implementation.
+When the user wants to make a real skill from the source, especially with a repo, team/client/authors, private source, release, evals, or skill-creation handoff, produce a Staff+ plan before implementation.
 
 Use `references/staff-plus-plan.md` and include:
 - product thesis and non-goals
@@ -106,8 +106,8 @@ Use `references/staff-plus-plan.md` and include:
 - `SKILL.md` contract and mode contracts
 - reference file specs with acceptance criteria
 - governance, quality rubric, evals, golden outputs, feedback loop
-- ready-to-paste `/create-skill extract` handoff
-- implementation route through `create-skill` and `shaw`
+- ready-to-paste handoff for the locally configured skill-creation workflow
+- implementation route through the selected skill-creation workflow and the selected development/implementation skill
 - git workflow, verification, rollback, release plan, Definition of Done
 
 Permission handling must be explicit:
@@ -145,4 +145,4 @@ Report:
 - `references/practical-skill-spec.md` — required spec fields and design rules
 - `references/book-type-patterns.md` — patterns for different kinds of books
 - `references/output-templates.md` — templates for analysis, spec, Staff+ delivery plan, and skill-creator handoff
-- `references/staff-plus-plan.md` — production-grade planning framework for durable book-to-skill delivery with repo, governance, evals, and create-skill handoff
+- `references/staff-plus-plan.md` — production-grade planning framework for durable book-to-skill delivery with repo, governance, evals, and skill-creation handoff

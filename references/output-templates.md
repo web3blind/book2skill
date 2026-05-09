@@ -95,7 +95,7 @@ Spec:
 
 ## Staff+ Skill Delivery Plan
 
-Use this when the user asks for a production-grade plan, GitHub/private repo plan, author-approved methodology skill, create-skill handoff, release/eval plan, or a plan another agent should be able to implement.
+Use this when the user asks for a production-grade plan, GitHub/private repo plan, author-approved methodology skill, skill-creation/development handoff, release/eval plan, or a plan another agent should be able to implement.
 
 ````md
 # Staff+ Plan: <skill-name>
@@ -150,11 +150,13 @@ evaluation layer  -> smoke tests, regression prompts, golden outputs, quality ru
 ## Evals
 <cases.yaml structure, smoke prompts, regression prompts, golden outputs.>
 
-## Book2Skill -> create-skill handoff
-<Ready-to-paste `/create-skill extract` artifact.>
+## Book2Skill -> skill-creation handoff
+<Ready-to-paste artifact for the locally configured skill-creation workflow.>
 
 ## Implementation route
-`/book2skill` -> `/create-skill extract` -> `/shaw implement` -> verify -> commit/push -> install -> eval -> release.
+`/book2skill` -> `<skill-creator-command> <handoff>` -> `<development-skill-command> implement` -> verify -> commit/push -> install -> eval -> release.
+
+Use the user's selected development skill instead of hardcoding one. For example, one environment may use `/coding`, another may use `/sho`, and another may use a different command.
 
 ## Git workflow
 <branch, commit sequence, pre-push checks, privacy checks, tags.>
