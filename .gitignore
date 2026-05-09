@@ -1,0 +1,28 @@
+# Local extraction output and source material
+/tmp/
+tmp/
+out/
+output/
+artifacts/
+books/
+sources/
+*.pdf
+*.epub
+*.fb2
+*.fb2.zip
+*.docx
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx

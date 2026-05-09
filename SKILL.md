@@ -1,0 +1,124 @@
+---
+name: book2skill
+description: Use when the user invokes /book2skill or asks to turn a book, PDF, EPUB, long article, course, notes, or author methodology into a practical OpenClaw skill. Produces a task-oriented skill spec from source material, avoids mere summaries, and hands final implementation to create-skills/skill creator after human review.
+---
+
+# book2skill
+
+Turn a book or body of knowledge into a practical OpenClaw skill: a reusable working instrument with modes, workflows, checks, examples, and references.
+
+## Core principle
+
+Do **not** create a book summary skill by default. Create a practical skill that helps the user do something with the book's methods.
+
+Good output:
+- task modes and workflows
+- decision rules and checklists
+- author-derived principles turned into actions
+- anti-patterns and self-checks
+- compact references loaded on demand
+
+Weak output:
+- chapter-by-chapter retelling
+- long quotations
+- generic “key takeaways” with no workflow
+- copying copyrighted text into the final skill
+
+## Workflow
+
+### 1. Intake
+
+Identify:
+- source: PDF, EPUB, FB2, extracted text, notes, article, course, or prior analysis
+- desired outcome: what the future skill should help the user do
+- target users and context
+- preferred language
+- source type from `references/book-type-patterns.md`
+- whether the user wants `analyze only`, `spec only`, or `create skill after review`
+
+Ask only for blocking missing information. If the source exists locally, inspect it only after permission/context is clear.
+
+### 2. Source handling and extraction
+
+Use the safest available path:
+- If text/notes are provided: analyze them directly.
+- If a local `.txt`, `.md`, `.pdf`, `.epub`, `.fb2`, or `.fb2.zip` file is provided: use `scripts/extract_book.py` to extract text and metadata into a temporary directory.
+- If an external tool or repo is suggested: do not install it automatically. Run the security gate before adopting code.
+- For copyrighted books: summarize and transform into original workflows; do not store substantial copied passages in generated skills.
+
+Extractor command, resolving the script path relative to this skill directory:
+
+```bash
+python3 <skill-dir>/scripts/extract_book.py <source-file> --out-dir /tmp/book2skill_extract
+```
+
+Optional preview/cost-control mode for very large books:
+
+```bash
+python3 <skill-dir>/scripts/extract_book.py <source-file> --out-dir /tmp/book2skill_extract --max-chars 120000
+```
+
+Then read:
+- `/tmp/book2skill_extract/metadata.json` for format, method, size, detected chapters, and quality hints
+- `/tmp/book2skill_extract/full_text.txt` for analysis
+
+Do not install missing dependencies automatically. If PDF/EPUB/FB2 extraction fails, report the missing extractor options and ask whether to install dependencies or accept exported text.
+
+### 3. Extract practical material
+
+Extract structure, not prose:
+- named frameworks and exact terms
+- principles and decision rules
+- techniques and step-by-step methods
+- diagnostics/questions the author would ask
+- anti-patterns and failure modes
+- examples worth abstracting into reusable patterns
+- areas where chapter references are useful later
+
+Use `references/practical-skill-spec.md` as the target shape.
+
+### 4. Design the practical skill
+
+Create a **Practical Skill Spec** before writing files. It must include:
+- proposed skill name and trigger description
+- use cases
+- modes/commands or argument patterns
+- workflow for each mode
+- inputs and outputs
+- guardrails and limits
+- reference files to create
+- validation/test prompts
+- open questions
+
+Use `references/output-templates.md`.
+
+### 5. Human review gate
+
+Before creating or overwriting a generated skill, show the spec and ask for confirmation unless the user explicitly pre-approved creation.
+
+If the user requests changes, revise the spec first.
+
+### 6. Handoff to skill creator
+
+For final implementation, use the `create-skills` workflow as the build/refactor stage:
+- create/update only under `~/.openclaw/workspace/skills/<target-skill>/`
+- keep `SKILL.md` concise
+- move long examples/checklists into `references/`
+- add scripts only for deterministic repeated steps
+- validate paths and smoke-check triggers
+
+When handing off, provide the reviewed Practical Skill Spec plus the required file list and validation prompts.
+
+### 7. Final report
+
+Report:
+- created/updated files
+- how to invoke the new skill
+- 2–3 realistic test requests
+- any source/extraction limits or assumptions
+
+## References
+
+- `references/practical-skill-spec.md` — required spec fields and design rules
+- `references/book-type-patterns.md` — patterns for different kinds of books
+- `references/output-templates.md` — templates for analysis, spec, and skill-creator handoff
