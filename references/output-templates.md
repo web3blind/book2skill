@@ -77,7 +77,7 @@
 ## Skill creator handoff
 
 ```md
-Use create-skills to implement this reviewed Practical Skill Spec as an OpenClaw skill.
+Use the local skill-creation workflow to implement this reviewed Practical Skill Spec as an OpenClaw skill. If the environment has `create-skills`, use it; otherwise use the configured skill creator.
 
 Target path:
 `~/.openclaw/workspace/skills/<skill-name>/`
@@ -95,7 +95,7 @@ Spec:
 
 ## Staff+ Skill Delivery Plan
 
-Use this when the user asks for a production-grade plan, GitHub/private repo plan, author-approved methodology skill, skill-creation/development handoff, release/eval plan, or a plan another agent should be able to implement.
+Use this when the user asks for a production-grade plan, repo-backed skill plan, author-approved methodology skill, skill-creation/development handoff, release/eval plan, or a plan another agent should be able to implement.
 
 ````md
 # Staff+ Plan: <skill-name>

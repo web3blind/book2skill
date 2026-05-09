@@ -92,11 +92,11 @@ Create a **Practical Skill Spec** before writing files. It must include:
 
 Use `references/output-templates.md`.
 
-If the user asks for a production-grade plan, private/public GitHub repo plan, author-approved methodology skill, implementation plan, or anything that should be handed to a skill-creation or development workflow, also produce a **Staff+ Skill Delivery Plan** using `references/staff-plus-plan.md`.
+If the user asks for a production-grade plan, repo-backed skill, author-approved methodology skill, eval/release plan, implementation plan, or anything that should be handed to a skill-creation or development workflow, also produce a **Staff+ Skill Delivery Plan** using `references/staff-plus-plan.md`.
 
 ### 5. Staff+ delivery plan gate
 
-When the user wants to make a real skill from the source, especially with a repo, team/client/authors, private source, release, evals, or skill-creation handoff, produce a Staff+ plan before implementation.
+When the user wants to make a durable skill from the source, especially with a repo-backed implementation, team/client/authors, private source, release, evals, or skill-creation handoff, produce a Staff+ plan before implementation. Do not use Staff+ planning for quick personal experiments unless the user asks for it.
 
 Use `references/staff-plus-plan.md` and include:
 - product thesis and non-goals
@@ -111,7 +111,7 @@ Use `references/staff-plus-plan.md` and include:
 - git workflow, verification, rollback, release plan, Definition of Done
 
 Permission handling must be explicit:
-- if author-approved/private/internal source is allowed, plan source archival, quote bank, `sources/manifest.yaml`, and `PRIVATE-NOTICE.md`;
+- if author-approved/private/internal source storage is explicitly allowed, plan source archival, quote bank, `sources/manifest.yaml`, and `PRIVATE-NOTICE.md`; private repo status alone is not permission to store raw source;
 - if permission is unknown or conservative, plan transformed references only and do not store raw source in the generated skill repo;
 - if open-licensed, preserve attribution and license terms.
 
@@ -123,7 +123,7 @@ If the user requests changes, revise the spec first.
 
 ### 7. Handoff to skill creator
 
-For final implementation, use the `create-skills` workflow as the build/refactor stage:
+For final implementation, use the local skill-creation workflow as the build/refactor stage. In this environment that may be `create-skills`; in another environment it may be a different skill creator:
 - create/update only under `~/.openclaw/workspace/skills/<target-skill>/`
 - keep `SKILL.md` concise
 - move long examples/checklists into `references/`

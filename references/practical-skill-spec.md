@@ -92,4 +92,4 @@ Write 2–3 realistic requests that should trigger the skill and exercise its ma
 
 ## Staff+ upgrade trigger
 
-When the user wants a durable skill, GitHub repo, private/team/author workflow, skill-creation handoff, evals, release, or implementation plan, do not stop at this Practical Skill Spec. Produce a Staff+ Skill Delivery Plan using `references/staff-plus-plan.md`.
+When the user wants a durable repo-backed skill, private/team/author workflow, skill-creation handoff, evals, release, or implementation plan, do not stop at this Practical Skill Spec. Produce a Staff+ Skill Delivery Plan using `references/staff-plus-plan.md`. For quick personal experiments, keep the Practical Skill Spec only unless the user asks for Staff+ planning.

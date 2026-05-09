@@ -1,6 +1,6 @@
 # Staff+ Skill Delivery Plan
 
-Use this reference when the user wants to create a skill from a book or author methodology and asks for a high-quality plan, production plan, private repo plan, author-approved plan, or anything that should be robust enough to hand to another agent or engineer.
+Use this reference when the user wants to create a skill from a book or author methodology and asks for a high-quality plan, production plan, repo-backed/private skill plan, author-approved plan, or anything that should be robust enough to hand to another agent or engineer.
 
 The Staff+ plan is not just a longer Practical Skill Spec. It is a delivery plan for turning a source into a maintained, testable, private or public OpenClaw skill.
 
@@ -8,15 +8,15 @@ The Staff+ plan is not just a longer Practical Skill Spec. It is a delivery plan
 
 Produce this plan when any of these are true:
 
-- the user asks for a plan before creating the skill;
-- the skill will live in a Git repo;
+- the user asks for a production-grade or implementation-ready plan before creating the skill;
+- the generated skill will be maintained in a repo, released, shared, or reused;
 - the skill is for authors, a client, a team, or future reuse;
 - source permission, privacy, or provenance matters;
-- the user mentions skill creation, implementation handoff, GitHub, PR, upstream, private repo, release, evals, or tests;
-- the source is a whole book, course, methodology, or expert system rather than a small note;
+- the user mentions GitHub, PR, upstream, private repo, release, evals, or tests in the context of creating or maintaining a generated skill;
+- the skill needs a handoff to a skill creator or implementation agent;
 - the skill may become a template for future book-to-skill work.
 
-Do not force the Staff+ plan for tiny personal experiments unless the user asks for it. For small one-off requests, use the Practical Skill Spec only.
+Do not force the Staff+ plan only because the source is a whole book, course, methodology, or expert system. For quick personal experiments and small one-off requests, use the Practical Skill Spec only unless the user asks for Staff+ planning.
 
 ## Staff+ plan objective
 
@@ -117,9 +117,9 @@ Use when the user says they have author/rights-holder permission or the source i
 
 Policy:
 
-- raw source may be stored in the private repo;
-- extracted text may be stored;
-- quote banks and excerpts are allowed when useful;
+- raw source may be stored only when the user confirms storage rights/permission;
+- extracted text may be stored only under the same permission;
+- quote banks and excerpts are allowed only within the granted permission and useful scope;
 - repo must remain private unless explicitly approved;
 - add `PRIVATE-NOTICE.md`;
 - add `sources/manifest.yaml`.
@@ -130,7 +130,7 @@ Use for internal docs, transcripts, courses, team playbooks.
 
 Policy:
 
-- source may be stored if the user wants reproducibility;
+- source may be stored if the user wants reproducibility and has the right to store it;
 - label privacy constraints;
 - avoid accidental public sharing.
 

@@ -17,7 +17,7 @@ Typical outputs:
 - checklists and anti-patterns;
 - reference files for the final skill;
 - validation prompts and eval cases for testing whether the new skill works;
-- a ready-to-paste handoff for skill-creation / implementation workflows.
+- a ready-to-paste handoff for the local skill-creation / implementation workflow.
 
 ## What it deliberately avoids
 
@@ -34,7 +34,7 @@ It should not:
 
 ## Staff+ planning mode
 
-When the user wants to make a real skill from a book or methodology, especially with a GitHub repo, private/team/client/author context, release, evals, or skill-creation handoff, Book2Skill should produce a **Staff+ Skill Delivery Plan**.
+When the user wants to make a durable skill from a book or methodology, especially with a repo-backed implementation, private/team/client/author context, release, evals, or skill-creation handoff, Book2Skill should produce a **Staff+ Skill Delivery Plan**.
 
 The Staff+ plan designs the full delivery system:
 
@@ -54,18 +54,18 @@ The skill follows this flow:
 2. Extract text and metadata when the source is local and permission/context is clear.
 3. Convert the material into frameworks, rules, techniques, diagnostics, anti-patterns, and examples.
 4. Produce a Practical Skill Spec for human review.
-5. If the user wants a durable implementation, repo, release, author/team workflow, or skill-creation handoff, produce a Staff+ Skill Delivery Plan.
+5. If the user wants a durable implementation, repo, release, author/team workflow, evals, or skill-creation handoff, produce a Staff+ Skill Delivery Plan.
 6. Hand the reviewed spec/plan to the skill-creation workflow.
-7. Keep long supporting material in references/ or sources/, while keeping SKILL.md concise.
+7. Keep long supporting material in `references/` or `sources/`, while keeping `SKILL.md` concise.
 
 ## Included files
 
-- SKILL.md — main OpenClaw skill instructions.
-- references/practical-skill-spec.md — required shape for the intermediate skill spec.
-- references/book-type-patterns.md — patterns for different source types: writing, technical, product, marketing, psychology, reference books, and mixed books.
-- references/output-templates.md — templates for analysis reports, specs, Staff+ delivery plans, and handoff prompts.
-- references/staff-plus-plan.md — production-grade planning framework for durable book-to-skill delivery with repo, governance, evals, and skill-creation handoff.
-- scripts/extract_book.py — local extractor for .txt, .md, .pdf, .epub, .fb2, and .fb2.zip files. It uses only available local tools/libraries and does not install dependencies.
+- `SKILL.md` — main OpenClaw skill instructions.
+- `references/practical-skill-spec.md` — required shape for the intermediate skill spec.
+- `references/book-type-patterns.md` — patterns for different source types: writing, technical, product, marketing, psychology, reference books, and mixed books.
+- `references/output-templates.md` — templates for analysis reports, specs, Staff+ delivery plans, and handoff prompts.
+- `references/staff-plus-plan.md` — production-grade planning framework for durable book-to-skill delivery with repo, governance, evals, and skill-creation handoff.
+- `scripts/extract_book.py` — local extractor for `.txt`, `.md`, `.pdf`, `.epub`, `.fb2`, and `.fb2.zip` files. It uses only available local tools/libraries and does not install dependencies.
 
 ## Source books and artifacts
 
@@ -80,12 +80,12 @@ That is intentional:
 
 However, Book2Skill now supports explicit permission modes:
 
-- **author-approved/private source** — plan source archival, extracted text, quote bank, PRIVATE-NOTICE.md, and sources/manifest.yaml inside a private repo;
+- **author-approved/private source** — plan source archival, extracted text, quote bank, `PRIVATE-NOTICE.md`, and `sources/manifest.yaml` only when the user has storage rights/permission, even if the repo is private;
 - **user-owned/internal source** — plan privacy-preserving archival and provenance;
 - **restricted third-party source** — keep raw source local and store transformed references only;
 - **open-licensed source** — preserve license and attribution.
 
-The .gitignore excludes common book and artifact formats by default for this Book2Skill repo. Generated skill repos may choose a different policy when permission allows.
+The `.gitignore` excludes common book and artifact formats by default for this Book2Skill repo. Generated skill repos may choose a different policy when permission allows.
 
 ## Example requests
 
