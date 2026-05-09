@@ -1,6 +1,6 @@
 ---
 name: book2skill
-description: Use when the user invokes /book2skill or asks to turn a book, PDF, EPUB, long article, course, notes, or author methodology into a practical OpenClaw skill. Produces a task-oriented skill spec from source material, avoids mere summaries, and hands final implementation to create-skills/skill creator after human review.
+description: Use when the user invokes /book2skill or asks to turn a book, PDF, EPUB, long article, course, notes, or author methodology into a practical OpenClaw skill. Produces a task-oriented skill spec or Staff+ delivery plan, avoids mere summaries, and hands final implementation to the locally configured skill-creation/development workflow after human review.
 ---
 
 # book2skill
@@ -22,7 +22,7 @@ Weak output:
 - chapter-by-chapter retelling
 - long quotations
 - generic “key takeaways” with no workflow
-- copying copyrighted text into the final skill
+- copying restricted text into the final skill without permission or purpose
 
 ## Workflow
 
@@ -44,7 +44,7 @@ Use the safest available path:
 - If text/notes are provided: analyze them directly.
 - If a local `.txt`, `.md`, `.pdf`, `.epub`, `.fb2`, or `.fb2.zip` file is provided: use `scripts/extract_book.py` to extract text and metadata into a temporary directory.
 - If an external tool or repo is suggested: do not install it automatically. Run the security gate before adopting code.
-- For copyrighted books: summarize and transform into original workflows; do not store substantial copied passages in generated skills.
+- For copyrighted books without explicit permission: summarize and transform into original workflows; do not store substantial copied passages in generated skills. If the user states the source is author-approved, user-owned, internal, or open-licensed, record that permission context and plan source archival/quotes according to `references/staff-plus-plan.md`.
 
 Extractor command, resolving the script path relative to this skill directory:
 
@@ -92,13 +92,36 @@ Create a **Practical Skill Spec** before writing files. It must include:
 
 Use `references/output-templates.md`.
 
-### 5. Human review gate
+If the user asks for a production-grade plan, private/public GitHub repo plan, author-approved methodology skill, implementation plan, or anything that should be handed to a skill-creation or development workflow, also produce a **Staff+ Skill Delivery Plan** using `references/staff-plus-plan.md`.
+
+### 5. Staff+ delivery plan gate
+
+When the user wants to make a real skill from the source, especially with a repo, team/client/authors, private source, release, evals, or skill-creation handoff, produce a Staff+ plan before implementation.
+
+Use `references/staff-plus-plan.md` and include:
+- product thesis and non-goals
+- source permission/provenance policy
+- source/knowledge/runtime/eval architecture
+- repo structure and install topology
+- `SKILL.md` contract and mode contracts
+- reference file specs with acceptance criteria
+- governance, quality rubric, evals, golden outputs, feedback loop
+- ready-to-paste handoff for the locally configured skill-creation workflow
+- implementation route through the selected skill-creation workflow and the selected development/implementation skill
+- git workflow, verification, rollback, release plan, Definition of Done
+
+Permission handling must be explicit:
+- if author-approved/private/internal source is allowed, plan source archival, quote bank, `sources/manifest.yaml`, and `PRIVATE-NOTICE.md`;
+- if permission is unknown or conservative, plan transformed references only and do not store raw source in the generated skill repo;
+- if open-licensed, preserve attribution and license terms.
+
+### 6. Human review gate
 
 Before creating or overwriting a generated skill, show the spec and ask for confirmation unless the user explicitly pre-approved creation.
 
 If the user requests changes, revise the spec first.
 
-### 6. Handoff to skill creator
+### 7. Handoff to skill creator
 
 For final implementation, use the `create-skills` workflow as the build/refactor stage:
 - create/update only under `~/.openclaw/workspace/skills/<target-skill>/`
@@ -109,7 +132,7 @@ For final implementation, use the `create-skills` workflow as the build/refactor
 
 When handing off, provide the reviewed Practical Skill Spec plus the required file list and validation prompts.
 
-### 7. Final report
+### 8. Final report
 
 Report:
 - created/updated files
@@ -121,4 +144,5 @@ Report:
 
 - `references/practical-skill-spec.md` — required spec fields and design rules
 - `references/book-type-patterns.md` — patterns for different kinds of books
-- `references/output-templates.md` — templates for analysis, spec, and skill-creator handoff
+- `references/output-templates.md` — templates for analysis, spec, Staff+ delivery plan, and skill-creator handoff
+- `references/staff-plus-plan.md` — production-grade planning framework for durable book-to-skill delivery with repo, governance, evals, and skill-creation handoff

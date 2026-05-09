@@ -9,7 +9,7 @@ Use this as the intermediate artifact before generating a final skill.
 - author or origin, if known
 - source format
 - extraction quality and limits
-- copyright handling note: transformed guidance only, no long copied passages
+- source permission/privacy note: author-approved, user-owned/internal, open-licensed, or conservative transform-only handling
 
 ### 2. Practical purpose
 Answer: what should the future skill help the user do?
@@ -72,7 +72,7 @@ Only create files that will be useful on demand.
 Include:
 - scope limits: book-derived guidance, not universal truth
 - source limits: extraction gaps, missing chapters, poor OCR
-- legal limits: no long copyrighted excerpts
+- legal/privacy limits: whether raw source, extracted text, quotes, and excerpts may be stored or must stay local/transformed only
 - style limits: preserve user voice where relevant
 - safety/domain limits where needed
 
@@ -88,3 +88,8 @@ Write 2–3 realistic requests that should trigger the skill and exercise its ma
 - Prefer actionable verbs: diagnose, rewrite, plan, decide, review, critique, generate.
 - If the book is mostly conceptual, turn concepts into questions and decision rules.
 - If the book is technical, turn content into decision guides, implementation playbooks, and review checklists.
+
+
+## Staff+ upgrade trigger
+
+When the user wants a durable skill, GitHub repo, private/team/author workflow, skill-creation handoff, evals, release, or implementation plan, do not stop at this Practical Skill Spec. Produce a Staff+ Skill Delivery Plan using `references/staff-plus-plan.md`.
